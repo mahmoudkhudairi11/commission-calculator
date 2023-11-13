@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.label {
+  font-weight: 700;
+  line-height: 3em;
+}
+
+.fixed {
+  background-color: #e3e3e3!important;
+}
+
+input, textarea, button {
+  font: inherit;
+  color: inherit;
+}
+
+body {
+  margin: 50px;
+  font-family: 'Cairo', sans-serif;
+}
+
+#calculator {
+  width: 572px;
+  margin: auto;
+  border: 1px solid #70707021;
+  border-radius: 9px;
+}
+
+#calculator #head {
+  background-color: #effafa;
+  text-align: center;
+  height: 78px;
+  line-height: 78px;
+}
+#calculator #head span {
+  color: #64a4a5;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+#calculator #page {
+  background-color: #64a4a5;
+  color: #fff;
+}
+
+#calculator .page-content {
+  padding: 34px 57px;
+}
+
+#calculator .question {
+  font-weight: 900;
+  font-size: .9em;
+}
+
+#calculator .toggle,
+#calculator .input-area,
+#calculator .total-commission {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: auto;
+  padding: 7px;
+  background-color: #effafa;
+  border-radius: 12px;
+  justify-content: space-between;
+  height: 77px;
+}
+#calculator .toggle.mini {
+  width: 342px;
+}
+#calculator .toggle .option {
+  padding: 10px 20px;
+  color: #64a4a5;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: .3s background-color;
+  height: 100%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+#calculator .toggle .option:hover {
+  background-color: #64a4a520;
+}
+#calculator .toggle .option.selected {
+  background-color: #64a4a5;
+  color: #effafa;
+  cursor: default;
+}
+
+#calculator .total-commission {
+  padding: 32px;
+}
+
+#calculator .input-area input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: none;
+  color: #64a4a5;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+#calculator .input-area span {
+  font-weight: 700;
+  font-size: .9em;
+  color: #64a4a5;
+}
+
+#calculator .total-commission span {
+  color: #64a4a5;
+  font-weight: 700;
+}
+#calculator .total-commission span:first-child {
+  flex: 1;
+  font-size: 1.5em;
+}
+#calculator .total-commission span:last-child {
+  font-weight: 700;
+  font-size: .9em;
+}
+
+#calculator .next,
+#calculator .prev {
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  display: block;
+  margin: auto;
+  transition: .3s background-color;
+  cursor: pointer;
+  font-size: 1.1em;
+  padding: 16px 20px;
+  border: 1px solid;
+}
+
+#calculator .next {
+  background-color: #f4bc87;
+  border-color: #D8A478;
+}
+
+#calculator .next:hover {
+  background-color: #f4bc50;
+}
+
+#calculator .prev {
+  background-color: #dcbda0;
+  border-color: #C3A68E;
+}
+
+#calculator .prev:hover {
+  background-color: #dcbd69;
+}
+
+#calculator .btn-group {
+  display: flex;
+  gap: 10px;
+  margin: auto;
+  text-align: right;
+  justify-content: center;
+}
+#calculator .btn-group.fit-height .input-area {
+  height: unset;
+}
+#calculator .btn-group .field {
+  flex: 1;
+}
+#calculator .btn-group > button {
+  margin: unset;
+}
+#calculator .btn-group input {
+  max-width: 175px;
+}
+
+#calculator .input-group {
+  display: flex;
+  gap: 10px;
+  margin: auto;
+}
+#calculator .btn-group > button {
+  margin: unset;
+}
+
+.field .label {
+  font-size: .9em;
+}
+
+.double-face {
+  position: relative;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+	height: 120px;
+}
+.double-face .front,
+.double-face .back {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: .4s transform, .4s z-index;
+}
+
+.double-face .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  top: 50%;
+  translate: 0 -30%;
+  background-color: #43BFBF;
+  border: 5px solid #FFFFFF8c;
+  border-radius: 9px;
+  z-index: 20;
+  visibility: visible;
+  cursor: pointer;
+}
+.double-face .back {
+  top: 0;
+	width: 100%;
+	height: 100%;
+  z-index: 10;
+  visibility: hidden;
+}
+
+.double-face.flip .front {
+  transform: rotateX(360deg);
+  z-index: 10;
+  visibility: hidden;
+}
+.double-face.flip .back {
+  transform: rotateX(360deg);
+  z-index: 20;
+  visibility: visible;
+}
+
+.commission-details {
+  display: flex;
+  justify-content: space-between;
+}
+.commission-details > div {
+  flex-basis: 48%;
+}
+.commission-details .detail span:last-child {
+  direction: ltr;
+  color: #4CA6A6;
+}
+.commission-details .detail span[is-negative="true"]:last-child {
+  color: #E55C5C;
+}
+.commission-details .right .detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: #ECFAFA;
+  color: #8B9696;
+  font-weight: 700;
+  font-size: 1.05em;
+}
+
+.commission-details .left {
+  background-color: #43BFBF
+}
+.commission-details .left .detail {
+  margin: 90px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.commission-details .left .detail span:last-child {
+  font-size: 1.5em;
+  color: #fff;
+}
+.commission-details .left button {
+  background-color: #ECFAFA;
+  border: #A2A8A8;
+  color: #8B9696;
+  padding: 16px;
+  font-size: .7em;
+  font-weight: 700;
+  border-radius: 9px;
+  margin: 10px auto;
+  display: block;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 512px) {
+  #calculator {
+    width: 100%;
+    font-size: 3vw;
+  }
+  #calculator .page-content {
+    padding: 20px 10px;
+  }
+  #calculator .toggle.mini {
+    width: 100%;
+  }
+  input {
+    max-width: 200px;
+  }
+  .btn-group {
+    flex-direction: column;
+    min-height: 220px;
+  }
+  .commission-details {
+    flex-direction: column;
+  }
+  .commission-details > div {
+    flex-basis: unset;
+  }
+  .commission-details .left .detail {
+    margin: 20px 0;
+    font-size: 1em;
+  }
+}
