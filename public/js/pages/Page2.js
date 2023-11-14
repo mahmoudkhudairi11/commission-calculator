@@ -51,8 +51,12 @@ const weeks = Array(4).fill(4);
 
 for (let i = 1; i <= 4; i++) {
   const field = content.querySelector(`[data-field='week${i}']`);
-  field.addEventListener('click', function () {
-    this.classList.add('flip');
+  const front = field.querySelector('.front');
+  front.addEventListener('click', function (e) {
+    field.classList.add('flip');
+  });
+  field.querySelector('.icon-btn').addEventListener('click', function () {
+    field.classList.remove('flip');
   });
   const input = field.querySelector(`input`);
   input.addEventListener('input', function () {

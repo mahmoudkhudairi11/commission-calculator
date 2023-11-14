@@ -38,6 +38,7 @@ export default
   <div class="field double-face" data-field="week1">
     <div class="front">الأسبوع الاول</div>
     <div class="back">
+      <button class="icon-btn"><img src="./imgs/flip.png"></button>
       <div class="label">الاسبوع الاول</div>
       <div class="input-area">
         <input type="number" />
@@ -48,6 +49,7 @@ export default
   <div class="field double-face" data-field="week2">
   <div class="front">الأسبوع الثاني</div>
     <div class="back">
+      <button class="icon-btn"><img src="./imgs/flip.png"></button>
       <div class="label">الاسبوع الثاني</div>
       <div class="input-area">
         <input type="number" />
@@ -60,6 +62,7 @@ export default
   <div class="field double-face" data-field="week3">
     <div class="front">الأسبوع الثالث</div>
     <div class="back">
+      <button class="icon-btn"><img src="./imgs/flip.png"></button>
       <div class="label">الاسبوع الثالث</div>
       <div class="input-area">
         <input type="number" />
@@ -70,6 +73,7 @@ export default
   <div class="field double-face" data-field="week4">
     <div class="front">الأسبوع الرابع</div>
     <div class="back">
+      <button class="icon-btn"><img src="./imgs/flip.png"></button>
       <div class="label">الاسبوع الرابع</div>
       <div class="input-area">
         <input type="number" />

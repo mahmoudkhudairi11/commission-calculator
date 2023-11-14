@@ -30,7 +30,7 @@ export default
       <span>اجمالي نسبة العمولة</span>
       <span>0%</span>
     </div>
-    <button>انقر لمشاهدة ملف العمولات</button>
+    <a href="https://drive.google.com/file/d/1w1twPpF1YmKZE2H73rxKZBble7kdf4xe/view?usp=sharing" target="_blank"><button>انقر لمشاهدة ملف العمولات</button></a>
   </div>
 </div>
 <br />

@@ -59,7 +59,10 @@ function render() {
   const commissionsSum = commissions.reduce((a, c) => a + c);
 
   commission.textContent = numberFormat.format(
-    +((commissionsSum / 100) * globals.Page1.total).toFixed(2)
+    Math.max(
+      0,
+      +((commissionsSum / 100) * globals.Page1.total).toFixed(2)
+    )
   );
 
   details[8].textContent = `${commissionsSum}%`;
