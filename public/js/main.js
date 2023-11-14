@@ -13,3 +13,14 @@ globals.onpagechange = index => {
   while (page.firstChild) page.firstChild.remove();
   page.append(pages[index].content);
 }
+
+window.addEventListener('keydown', (e) => {
+  if (e.target instanceof HTMLInputElement && ["ArrowUp", "ArrowDown"].includes(e.code)) {
+    e.preventDefault();
+    window.scrollBy({
+      top: 40 * (e.code === "ArrowUp" ? -1 : 1),
+      behavior: "smooth"
+    });
+    return false;
+  }
+});

@@ -2,7 +2,7 @@ export default
 `<div class="center">
   <span class="label">هذه عمولتك يا وحش</span>
   <div class="total-commission">
-    <span class="commission">0</span>
+    <span class="commission" style="font-size: 3em">0</span>
     <span>ريال</span>
   </div>
 </div>

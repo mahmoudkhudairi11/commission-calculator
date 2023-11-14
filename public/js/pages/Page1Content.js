@@ -16,7 +16,7 @@ export default
 </div>
 <br />
 <div class="center" data-field="one-year-bill">
-  <span class="label">ادخل اجمالي الفواتير للسنتين مع الضريبة 15%</span>
+  <span class="label">ادخل اجمالي الفواتير للسنة مع الضريبة 15%</span>
   <div class="input-area">
     <input type="number" />
     <span>ريال</span>

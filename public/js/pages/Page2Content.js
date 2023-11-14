@@ -30,10 +30,9 @@ export default
   </div>
 </div>
 <br />
-<span class="label"
-  >تحقيق الاسابيع انقر على الاسابيع المختارة
-  <span style="color: #c30000">(بدون الضريبة)</span></span
->
+<div class="center"><span class="label"
+>تحقيق الاسابيع انقر على الاسابيع المختارة
+<span style="color: #c30000">(بدون الضريبة)</span></span></div>
 <div class="btn-group fit-height">
   <div class="field double-face" data-field="week1">
     <div class="front">الأسبوع الاول</div>

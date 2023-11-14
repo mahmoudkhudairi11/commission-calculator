@@ -45,8 +45,8 @@ const twoYearsBillInput = content.querySelector(
 );
 twoYearsBillInput.addEventListener("change", function () {
   this.value = +(this.valueAsNumber || 0).toFixed(2);
-  twoYearsBill = +((this.valueAsNumber || 0).toFixed(2));
-  nextBtn.disabled = Boolean(!twoYearsBill || !oneYearBill);
+  twoYearsBill = +(((this.valueAsNumber || 0) / 2).toFixed(2));
+  nextBtn.disabled = Boolean(!twoYearsBill && !oneYearBill);
   updateTotal();
 });
 
@@ -56,7 +56,7 @@ const oneYearBillInput = content.querySelector(
 oneYearBillInput.addEventListener("change", function () {
   this.value = +(this.valueAsNumber || 0).toFixed(2);
   oneYearBill = +((this.valueAsNumber || 0).toFixed(2));
-  nextBtn.disabled = Boolean(!twoYearsBill || !oneYearBill);
+  nextBtn.disabled = Boolean(!twoYearsBill && !oneYearBill);
   updateTotal();
 });
 
@@ -73,7 +73,7 @@ function updateTotal() {
 const nextBtn = content.querySelector(".next");
 
 nextBtn.addEventListener("click", () => {
-  if (twoYearsBill && oneYearBill) globals.currentPageIndex++;
+  if (twoYearsBill || oneYearBill) globals.currentPageIndex++;
 });
 
 export { content };

@@ -47,13 +47,14 @@ STCClients.addEventListener('change', function () {
     this.value = Math.trunc(this.valueAsNumber || 0);
   });
 
-const weeks = Array(4).fill(4);
+const weeks = Array(4).fill(0);
 
 for (let i = 1; i <= 4; i++) {
   const field = content.querySelector(`[data-field='week${i}']`);
   const front = field.querySelector('.front');
   front.addEventListener('click', function (e) {
     field.classList.add('flip');
+    input.focus();
   });
   field.querySelector('.icon-btn').addEventListener('click', function () {
     field.classList.remove('flip');
@@ -77,10 +78,17 @@ for (let i = 1; i <= 4; i++) {
 }
 const weeksMin = [6000, 8000, 10000, 18000, 6000, 8000, 10000, 18000];
 
+let rest = 0;
+
 globals.Page2.onupdate.push(function () {
   for (let i = 0; i < 4; i++) {
     if (weeks[i] >= weeksMin[i]) {
       globals.Page2.weeksCommissions[i] = 2;
+      rest = weeks[i] - weeksMin[i];
+      while (i < 4 && rest + weeks[++i] >= weeksMin[i]) {
+        globals.Page2.weeksCommissions[i] = 2;
+        rest = (rest + weeks[i]) - weeksMin[i];
+      }
     } else {
       globals.Page2.weeksCommissions[i] = -2;
       if (i < 3) weeksMin[i + 1] += weeksMin[i];
