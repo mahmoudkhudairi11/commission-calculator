@@ -1,6 +1,6 @@
 export default
 `<div class="center" data-field="has-tax">
-  <span class="question">هل المبالغ المدخلة شاملة الضريبة ام لا؟</span>
+  <span class="label">هل المبالغ المدخلة شاملة الضريبة ام لا؟</span>
   <div class="toggle mini">
     <div class="option" data-value="false">غير شامل الضريبة</div>
     <div class="option selected" data-value="true">شامل الضريبة 15%</div>
@@ -31,4 +31,4 @@ export default
   </div>
 </div>
 <br />
-<button class="next">الانتقال الى حساب العمولة</button>`;
+<button class="next" disabled>الانتقال الى حساب العمولة</button>`;

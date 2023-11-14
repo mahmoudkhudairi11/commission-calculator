@@ -15,17 +15,17 @@ export default
 </div>
 <br />
 <div class="btn-group">
-  <div class="field" data-field="convetion-ratio">
+  <div class="field" data-field="convertion-ratio">
     <div class="label">نسبة الكونفيرجن؟</div>
     <div class="input-area">
       <input type="number" min="0" max="100" />
-      <span>%</span>
+      <span style="font-size:2.5em;font-weight:700">%</span>
     </div>
   </div>
   <div class="field" data-field="stc-clients">
     <div class="label">عدد عملاء STC</div>
     <div class="input-area">
-      <input type="number" min="0" max="100" />
+      <input type="number" min="0" max="100" step="1" />
     </div>
   </div>
 </div>
@@ -78,8 +78,9 @@ export default
     </div>
   </div>
 </div>
+<span class="label error weeks-error" hidden>يجب ان يتطابق مجموع الاسابيع مع اجمالي المبلغ بدون ضريبة</span>
 <br />
 <div class="btn-group">
   <button class="prev">للخلف</button>
-  <button class="next">الانتقال الى حساب العمولة</button>
+  <button class="next">النتيجة</button>
 </div>`;

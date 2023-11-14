@@ -18,18 +18,21 @@ function render() {
   for (let i = 0; i < 4; i++) {
     commissions.push(globals.Page2.weeksCommissions[i]);
     details[i].textContent = `${globals.Page2.weeksCommissions[i]}%`;
-    details[i].setAttribute('is-negative', globals.Page2.weeksCommissions[i] < 0);
+    details[i].setAttribute(
+      "is-negative",
+      globals.Page2.weeksCommissions[i] < 0
+    );
   }
 
   const stcCommission = globals.Page2.STCClients < 5 ? -2 : 0;
   commissions.push(stcCommission);
   details[4].textContent = `${stcCommission}%`;
-  details[4].setAttribute('is-negative', stcCommission < 0);
+  details[4].setAttribute("is-negative", stcCommission < 0);
 
   const teamCommission = globals.Page2.isFirstTeam ? 2 : 0;
   commissions.push(teamCommission);
   details[5].textContent = `${teamCommission}%`;
-  details[5].setAttribute('is-negative', teamCommission < 0);
+  details[5].setAttribute("is-negative", teamCommission < 0);
 
   const totalCommission =
     globals.Page1.total < 25000
@@ -41,7 +44,7 @@ function render() {
       : 25;
   commissions.push(totalCommission);
   details[6].textContent = `${totalCommission}%`;
-  details[6].setAttribute('is-negative', totalCommission < 0);
+  details[6].setAttribute("is-negative", totalCommission < 0);
 
   const convertionRatio =
     globals.Page2.convertionRatio < 15
@@ -51,18 +54,16 @@ function render() {
       : 2;
   commissions.push(convertionRatio);
   details[7].textContent = `${convertionRatio}%`;
-  details[7].setAttribute('is-negative', convertionRatio < 0);
+  details[7].setAttribute("is-negative", convertionRatio < 0);
 
   const commissionsSum = commissions.reduce((a, c) => a + c);
 
   commission.textContent = numberFormat.format(
-    (commissionsSum / 100) * globals.Page1.total
+    +((commissionsSum / 100) * globals.Page1.total).toFixed(2)
   );
 
   details[8].textContent = `${commissionsSum}%`;
-  details[8].setAttribute('is-negative', commissionsSum < 0);
-
-  console.log('render', commissions);
+  details[8].setAttribute("is-negative", commissionsSum < 0);
 }
 
 render();

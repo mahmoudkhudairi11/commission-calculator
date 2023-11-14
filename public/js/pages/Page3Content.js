@@ -10,19 +10,19 @@ export default
 <div class="commission-details">
   <div class="right">
     <div class="detail"><span>الاسبوع الاول</span><span>0</span></div>
-    <div class="seperator"></div>
+    <div class="separator"></div>
     <div class="detail"><span>الاسبوع الثاني</span><span>0</span></div>
-    <div class="seperator"></div>
+    <div class="separator"></div>
     <div class="detail"><span>الاسبوع الثالث</span><span>0</span></div>
-    <div class="seperator"></div>
+    <div class="separator"></div>
     <div class="detail"><span>الاسبوع الرابع</span><span>0</span></div>
-    <div class="seperator"></div>
+    <div class="separator"></div>
     <div class="detail"><span>عملاء STC</span><span>0</span></div>
-    <div class="seperator"></div>
+    <div class="separator"></div>
     <div class="detail"><span>التيم الاول</span><span>0</span></div>
-    <div class="seperator"></div>
+    <div class="separator"></div>
     <div class="detail"><span>عمولة المبيعات</span><span>0</span></div>
-    <div class="seperator"></div>
+    <div class="separator"></div>
     <div class="detail"><span>عمولة نسبة الكونفيرجن</span><span>0</span></div>
   </div>
   <div class="left">

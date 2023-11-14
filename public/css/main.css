@@ -12,6 +12,11 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+input[type=number] {
+  text-align: center;
+  direction: ltr;
+}
+
 .center {
   text-align: center;
 }
@@ -19,6 +24,9 @@ input[type=number]::-webkit-outer-spin-button {
 .label {
   font-weight: 700;
   line-height: 3em;
+}
+.label.error {
+  color: #c30000;
 }
 
 .fixed {
@@ -40,6 +48,7 @@ body {
   margin: auto;
   border: 1px solid #70707021;
   border-radius: 9px;
+  overflow: hidden;
 }
 
 #calculator #head {
@@ -152,13 +161,17 @@ body {
   padding: 16px 20px;
   border: 1px solid;
 }
+#calculator .next:disabled {
+  opacity: .8;
+  cursor: default;
+}
 
 #calculator .next {
   background-color: #f4bc87;
   border-color: #D8A478;
 }
 
-#calculator .next:hover {
+#calculator .next:not(:disabled):hover {
   background-color: #f4bc50;
 }
 
@@ -260,27 +273,44 @@ body {
   justify-content: space-between;
 }
 .commission-details > div {
-  flex-basis: 48%;
+  flex-basis: 49%;
+  border-radius: 9px;
+}
+.commission-details .right .detail span:first-child {
+  font-size: .8em;
 }
 .commission-details .detail span:last-child {
   direction: ltr;
   color: #4CA6A6;
+  font-size: 1.3em;
 }
 .commission-details .detail span[is-negative="true"]:last-child {
   color: #E55C5C;
 }
+.commission-details .right {
+  background-color: #ECFAFA;
+}
 .commission-details .right .detail {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px;
-  background-color: #ECFAFA;
   color: #8B9696;
   font-weight: 700;
   font-size: 1.05em;
 }
 
+.commission-details .separator {
+  border: 2px dashed #77A2A2;
+  width: 90%;
+  margin: auto;
+}
+
 .commission-details .left {
-  background-color: #43BFBF
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #43BFBF;
 }
 .commission-details .left .detail {
   margin: 90px 0;
@@ -308,18 +338,21 @@ body {
 }
 
 @media screen and (max-width: 512px) {
+  body {
+    margin: 0;
+  }
   #calculator {
     width: 100%;
     font-size: 3vw;
   }
   #calculator .page-content {
-    padding: 20px 10px;
+    padding: 3vh 3vw;
   }
   #calculator .toggle.mini {
     width: 100%;
   }
   input {
-    max-width: 200px;
+    max-width: 90vw;
   }
   .btn-group {
     flex-direction: column;

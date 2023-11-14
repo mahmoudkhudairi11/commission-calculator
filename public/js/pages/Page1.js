@@ -44,7 +44,9 @@ const twoYearsBillInput = content.querySelector(
   '[data-field="two-years-bill"] input'
 );
 twoYearsBillInput.addEventListener("change", function () {
-  twoYearsBill = +this.value;
+  this.value = +(this.valueAsNumber || 0).toFixed(2);
+  twoYearsBill = +((this.valueAsNumber || 0).toFixed(2));
+  nextBtn.disabled = Boolean(!twoYearsBill || !oneYearBill);
   updateTotal();
 });
 
@@ -52,7 +54,9 @@ const oneYearBillInput = content.querySelector(
   '[data-field="one-year-bill"] input'
 );
 oneYearBillInput.addEventListener("change", function () {
-  oneYearBill = this.valueAsNumber || 0;
+  this.value = +(this.valueAsNumber || 0).toFixed(2);
+  oneYearBill = +((this.valueAsNumber || 0).toFixed(2));
+  nextBtn.disabled = Boolean(!twoYearsBill || !oneYearBill);
   updateTotal();
 });
 
@@ -63,11 +67,13 @@ function updateTotal() {
   let sum = twoYearsBill + oneYearBill;
   if (hasTax) sum = (100 / 115) * sum;
   total.textContent = numberFormat.format(sum.toFixed(2));
-  globals.Page1.total = sum;
+  globals.Page1.total = +sum.toFixed(2);
 }
 
-content
-  .querySelector(".next")
-  .addEventListener("click", () => globals.currentPageIndex++);
+const nextBtn = content.querySelector(".next");
+
+nextBtn.addEventListener("click", () => {
+  if (twoYearsBill && oneYearBill) globals.currentPageIndex++;
+});
 
 export { content };
