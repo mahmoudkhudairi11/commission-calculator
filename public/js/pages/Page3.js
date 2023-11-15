@@ -40,6 +40,8 @@ function render() {
       : globals.Page1.total < 42000
       ? 5
       : globals.Page1.total < 58000
+      ? 15
+      : globals.Page1.total < 90000
       ? 20
       : 25;
   commissions.push(totalCommission);
@@ -59,10 +61,7 @@ function render() {
   const commissionsSum = commissions.reduce((a, c) => a + c);
 
   commission.textContent = numberFormat.format(
-    Math.max(
-      0,
-      +((commissionsSum / 100) * globals.Page1.total).toFixed(2)
-    )
+    Math.max(0, +((commissionsSum / 100) * globals.Page1.total).toFixed(2))
   );
 
   details[8].textContent = `${commissionsSum}%`;
